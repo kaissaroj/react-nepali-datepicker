@@ -13,7 +13,7 @@ import {
 } from './helpers'
 interface Interface {
   dateFormat: string | undefined
-  onDateChange(date: object): object
+  onDateChange(date: object): void
 }
 
 interface CalendarDetailsInterface {
