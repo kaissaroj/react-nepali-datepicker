@@ -98,3 +98,22 @@
 .hide {
   display: none;
 }
+
+.container {
+  /* float: left; */
+  display: block;
+}
+
+.abs {
+  position: absolute;
+}
+.rel {
+  position: relative;
+}
+.slider img {
+  width: 100%;
+}
+
+.content {
+  border: 2px solid red;
+}

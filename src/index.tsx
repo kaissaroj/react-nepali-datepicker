@@ -91,26 +91,33 @@ const DatePicker: React.SFC<Interface> = ({ dateFormat, onDateChange }) => {
     <React.Fragment></React.Fragment>
   ) : (
     <div className={styles.dateContainer}>
-      <input
-        type='text'
-        readOnly={true}
-        placeholder='Select Date'
-        onClick={() => setDatePicker(!_showDatePicker)}
-        className={styles.dateinput}
-        value={selectedDate}
-      />
-      <div
-        className={`${styles.nepdatemain} ${
-          !_showDatePicker ? styles.hide : ''
-        }`}
-      >
-        <div className={styles.calendar}>
-          <CalendarHeader {...{ bsMonth, bsYear, changeMonth }} />
-          <CalendarWeek />
-          <CalendarDates {...{ calendarDetails, onDateClick, selectedDay }} />
+      <div className={styles.container}>
+        <div className={styles.rel}>
+          <input
+            type='text'
+            readOnly={true}
+            placeholder='Select Date'
+            onClick={() => setDatePicker(!_showDatePicker)}
+            className={styles.dateinput}
+            value={selectedDate}
+          />
+        </div>
+        <div className={styles.rel}>
+          <div
+            className={`${styles.nepdatemain} ${
+              !_showDatePicker ? styles.hide : ''
+            }`}
+          >
+            <div className={styles.calendar}>
+              <CalendarHeader {...{ bsMonth, bsYear, changeMonth }} />
+              <CalendarWeek />
+              <CalendarDates
+                {...{ calendarDetails, onDateClick, selectedDay }}
+              />
+            </div>
+          </div>
         </div>
       </div>
-      {/* )} */}
     </div>
   )
 }

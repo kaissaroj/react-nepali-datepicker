@@ -15,8 +15,8 @@ npm i @kaizer433/react-nepali-datepicker
 ```tsx
 import React, { Component } from 'react'
 
-import DatePicker from 'react-nepali-datepicker'
-import 'react-nepali-datepicker/dist/index.css'
+import DatePicker from '@kaizer433/react-nepali-datepicker'
+import '@kaizer433/react-nepali-datepicker/dist/index.css'
 
 class Example extends Component {
   dateChange = (d) => {
