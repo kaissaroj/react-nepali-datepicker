@@ -9,7 +9,7 @@
 ```bash
 npm i @kaizer433/react-nepali-datepicker
 ```
-
+![Image description](https://i.imgur.com/h5kzBJ3.png)
 ## Usage
 
 ```tsx
