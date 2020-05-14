@@ -1,6 +1,6 @@
-# react-nepali-datepicker
+# React-Nepali-Datepicker
 
->  A React DatePicker for Nepali Dates(BS)
+> A React DatePicker for Nepali Dates(BS)
 
 [![NPM](https://img.shields.io/npm/v/react-nepali-datepicker.svg)](https://www.npmjs.com/package/react-nepali-datepicker) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
