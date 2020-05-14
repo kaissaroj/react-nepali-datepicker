@@ -2,12 +2,12 @@
 
 > A React DatePicker for Nepali Dates(BS)
 
-[![NPM](https://img.shields.io/npm/v/react-nepali-datepicker.svg)](https://www.npmjs.com/package/react-nepali-datepicker) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
+[![NPM](https://img.shields.io/npm/v/@kaizer433/react-nepali-datepicker)](https://www.npmjs.com/package/@kaizer433/react-nepali-datepicker) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
 ## Install
 
 ```bash
-npm install --save react-nepali-datepicker
+npm i @kaizer433/react-nepali-datepicker
 ```
 
 ## Usage
