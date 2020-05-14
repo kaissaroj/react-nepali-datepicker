@@ -11,10 +11,9 @@ import {
   _renderNextMonthCalendar,
   _renderPreviousMonthCalendar
 } from './helpers'
-type onDateSelectInterface = (date: object) => object | undefined
 interface Interface {
   dateFormat: string | undefined
-  onDateChange: onDateSelectInterface
+  onDateChange(date: object): object
 }
 
 interface CalendarDetailsInterface {
