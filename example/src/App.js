@@ -10,6 +10,7 @@ const App = () => {
     <div className='container'>
       <h1>React Nepali DatePicker Example</h1>
       <DatePicker
+        placeholderText='From Date'
         dateFormat={'%y %M, %d'}
         onDateChange={(date) => setDateDetails(date)}
       />

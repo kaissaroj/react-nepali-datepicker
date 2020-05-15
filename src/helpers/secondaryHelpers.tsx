@@ -504,5 +504,9 @@ export const calendarFunctions = {
     }
 
     return extractedFormattedBsDate
+  },
+  isValidDate: (dateString: string) => {
+    var regEx = /^\d{4}-\d{2}-\d{2}$/
+    return dateString.match(regEx) != null
   }
 }

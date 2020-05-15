@@ -9,8 +9,10 @@
 ```bash
 npm i @kaizer433/react-nepali-datepicker
 ```
-[Demo](https://kaissaroj.github.io/react-nepali-datepicker/) 
+
+[Demo](https://kaissaroj.github.io/react-nepali-datepicker/)
 ![Image description](https://i.imgur.com/h5kzBJ3.png)
+
 ## Usage
 
 ```tsx
@@ -20,6 +22,7 @@ import DatePicker from '@kaizer433/react-nepali-datepicker'
 import '@kaizer433/react-nepali-datepicker/dist/index.css'
 
 class Example extends Component {
+  defaultDate = '2077-02-12' //default date must be in YYYY-MM-DD format
   dateChange = (d) => {
     console.log(d)
     /** {"bsYear":2077,
@@ -36,6 +39,8 @@ class Example extends Component {
       <DatePicker
         dateFormat={'%y %M, %d'}
         onDateChange={(date) => dateChange(date)}
+        placeholderText='From Date' //optional
+        selectedDefaultDate={defaultDate} //optional
       />
     )
   }

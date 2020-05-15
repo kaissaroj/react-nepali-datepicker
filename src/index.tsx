@@ -14,6 +14,8 @@ import {
 interface Interface {
   dateFormat: string | undefined
   onDateChange(date: object): void
+  placeholderText: string | undefined
+  selectedDefaultDate: string | undefined
 }
 
 interface CalendarDetailsInterface {
@@ -27,8 +29,14 @@ interface CalendarDetailsInterface {
   bsMonthDays: number | undefined
 }
 
-const DatePicker: React.SFC<Interface> = ({ dateFormat, onDateChange }) => {
+const DatePicker: React.SFC<Interface> = ({
+  dateFormat,
+  onDateChange,
+  placeholderText,
+  selectedDefaultDate
+}) => {
   const dateFormatted = dateFormat || '%D, %M %d, %y'
+  const placeholder = placeholderText || 'Select Date'
   const [selectedDate, setSelectedDate] = React.useState<string>('')
   const [_showDatePicker, setDatePicker] = React.useState<boolean>(false)
   const [selectedDayMonth, setSelectedDay] = React.useState<any>({
@@ -52,6 +60,20 @@ const DatePicker: React.SFC<Interface> = ({ dateFormat, onDateChange }) => {
     const details = _getCalendarInitialDetails(0, dateFormatted)
     setCalendarDetails(details)
   }, [])
+  React.useEffect(() => {
+    try {
+      if (
+        !!selectedDefaultDate &&
+        calendarFunctions.isValidDate(selectedDefaultDate)
+      ) {
+        const updatedNepaliDate = selectedDefaultDate
+          .split('-')
+          .map((n: any) => calendarFunctions.getNepaliNumber(n))
+          .join('-')
+        setSelectedDate(updatedNepaliDate)
+      }
+    } catch (e) {}
+  }, [selectedDefaultDate])
   const changeMonth = (type: string) => {
     let details: any = calendarDetails
     if (type === 'next') {
@@ -95,7 +117,7 @@ const DatePicker: React.SFC<Interface> = ({ dateFormat, onDateChange }) => {
           <input
             type='text'
             readOnly={true}
-            placeholder='Select Date'
+            placeholder={placeholder}
             onClick={() => setDatePicker(!_showDatePicker)}
             className={styles.dateinput}
             value={selectedDate}
