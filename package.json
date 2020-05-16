@@ -8,9 +8,6 @@
   "main": "dist/index.js",
   "module": "dist/index.modern.js",
   "source": "src/index.tsx",
-  "engines": {
-    "node": ">=10"
-  },
   "scripts": {
     "build": "microbundle-crl --no-compress --format modern,cjs",
     "start": "microbundle-crl watch --no-compress --format modern,cjs",
@@ -23,6 +20,14 @@
     "predeploy": "cd example && npm install && npm run build",
     "deploy": "gh-pages -d example/build"
   },
+  "keywords": [
+    "nepali",
+    "react",
+    "datepicker",
+    "calendar",
+    "date",
+    "react-component"
+  ],
   "peerDependencies": {
     "react": "^16.0.0"
   },
