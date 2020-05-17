@@ -123,11 +123,11 @@ const DatePicker: React.SFC<Interface> = ({
             value={selectedDate}
           />
         </div>
-        <div className={styles.rel}>
+        <div className={`${styles.rel}`} id='nepali-datepicker-container'>
           <div
             className={`${styles.nepdatemain} ${
               !_showDatePicker ? styles.hide : ''
-            }`}
+            }  ${styles.zIndex}`}
           >
             <div className={styles.calendar}>
               <CalendarHeader {...{ bsMonth, bsYear, changeMonth }} />
