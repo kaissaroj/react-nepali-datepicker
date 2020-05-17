@@ -121,6 +121,7 @@ const DatePicker: React.SFC<Interface> = ({
             onClick={() => setDatePicker(!_showDatePicker)}
             className={styles.dateinput}
             value={selectedDate}
+            id='nepali-datepicker-input'
           />
         </div>
         <div className={`${styles.rel}`} id='nepali-datepicker-container'>
