@@ -25,7 +25,8 @@ const CalendarWeek: React.SFC<Interface> = ({
 }) => {
   const [dateLists, setDateLists] = React.useState<any>({
     current: [],
-    other: []
+    other: [],
+    rawDates: []
   })
   React.useEffect(() => {
     const temp = _getCalendarBody(calendarDetails)
@@ -33,13 +34,14 @@ const CalendarWeek: React.SFC<Interface> = ({
     setDateLists(temp)
   }, [calendarDetails])
 
-  const { weekDay, bsDate } = calendarDetails
+  const { bsDate } = calendarDetails
   const currentDay = calendarFunctions.getNepaliNumber(bsDate)
-  const { current } = dateLists
+  const { current, rawDates } = dateLists
+  const startFromDay = rawDates.filter((f: any) => f < 1).length + 1
   return (
     <div className={styles.dategrid}>
       {current.map((day: any, index: any) => {
-        const customClassName = index === 0 ? `firstday${weekDay}` : ''
+        const customClassName = index === 0 ? `firstday${startFromDay}` : ''
         const customCurrentDay = day === currentDay ? `currentday` : ''
         const selectedButtonClass =
           !!selectedDay && selectedDay === index + 1 ? `selected` : ''

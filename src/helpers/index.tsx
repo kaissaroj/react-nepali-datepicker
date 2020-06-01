@@ -72,10 +72,12 @@ export const _getCalendarBody = function (datePickerData: any) {
     preYear >= calendarData.minBsYear
       ? calendarFunctions.getBsMonthDays(preYear, preMonth)
       : 30
-  var calendarBody: any = { other: [], current: [] }
+  var calendarBody: any = { other: [], current: [], rawDates: [] }
+
   for (var i = 0; i < weekCoverInMonth; i++) {
     for (var k = 1; k <= 7; k++) {
       var calendarDate = i * 7 + k - datePickerData.bsMonthFirstAdDate.getDay()
+      calendarBody.rawDates.push(calendarDate)
       var isCurrentMonthDate = true
       if (calendarDate <= 0) {
         calendarDate = preMonthDays + calendarDate

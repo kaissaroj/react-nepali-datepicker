@@ -143,4 +143,4 @@ const DatePicker: React.SFC<Interface> = ({
     </div>
   )
 }
-export default DatePicker
+export default React.memo(DatePicker)

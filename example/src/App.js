@@ -1,8 +1,6 @@
 import React from 'react'
 
-import DatePicker from 'react-nepali-datepicker'
-import 'react-nepali-datepicker/dist/index.css'
-import './index.css'
+import Picker from './Picker'
 
 const App = () => {
   const [dateDetails, setDateDetails] = React.useState({})
@@ -10,11 +8,7 @@ const App = () => {
     <div className='container'>
       <form onSubmit={(e) => e.preventDefault()}>
         <h1>React Nepali DatePicker Example</h1>
-        <DatePicker
-          placeholderText='From Date'
-          dateFormat={'%y %M, %d'}
-          onDateChange={(date) => setDateDetails(date)}
-        />
+        <Picker selectedDefaultDate='' set={setDateDetails} />
         <p>Date Format : '%y %M, %d'</p>
         {Object.keys(dateDetails).length > 0 && (
           <>
@@ -24,6 +18,7 @@ const App = () => {
             {JSON.stringify(dateDetails)}
           </>
         )}
+        <button onClick={() => setDateDetails({})}>Refresh</button>
       </form>
     </div>
   )
