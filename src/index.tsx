@@ -29,6 +29,8 @@ interface CalendarDetailsInterface {
   bsMonthDays: number | undefined
 }
 
+let containerRef: any = []
+
 const DatePicker: React.SFC<Interface> = ({
   dateFormat,
   onDateChange,
@@ -55,10 +57,13 @@ const DatePicker: React.SFC<Interface> = ({
     bsMonthFirstAdDate: undefined,
     bsMonthDays: undefined
   })
+
   const { bsMonth, bsYear, bsDate } = calendarDetails
   React.useEffect(() => {
     const details = _getCalendarInitialDetails(0, dateFormatted)
     setCalendarDetails(details)
+    document.addEventListener('mousedown', handleClick, false)
+    return () => document.removeEventListener('mousedown', handleClick, false)
   }, [])
   React.useEffect(() => {
     try {
@@ -74,6 +79,12 @@ const DatePicker: React.SFC<Interface> = ({
       }
     } catch (e) {}
   }, [selectedDefaultDate])
+  const handleClick = (e: any) => {
+    const isInsideContainer = containerRef
+      ? containerRef.contains(e.target)
+      : false
+    !isInsideContainer && setDatePicker(false)
+  }
   const changeMonth = (type: string) => {
     let details: any = calendarDetails
     if (type === 'next') {
@@ -104,6 +115,7 @@ const DatePicker: React.SFC<Interface> = ({
       month: bsMonth
     })
   }
+
   const selectedDay =
     selectedDayMonth.month === calendarDetails.bsMonth
       ? selectedDayMonth.day
@@ -111,7 +123,12 @@ const DatePicker: React.SFC<Interface> = ({
   return bsYear == 0 ? (
     <React.Fragment></React.Fragment>
   ) : (
-    <div className={styles.dateContainer}>
+    <div
+      className={styles.dateContainer}
+      ref={(e) => {
+        containerRef = e
+      }}
+    >
       <div className={styles.container}>
         <div className={styles.rel}>
           <input
