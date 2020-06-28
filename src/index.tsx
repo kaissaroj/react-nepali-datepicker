@@ -16,6 +16,8 @@ interface Interface {
   onDateChange(date: object): void
   placeholderText: string | undefined
   selectedDefaultDate: string | undefined
+  fromDate: string | undefined
+  toDate: string | undefined
 }
 
 interface CalendarDetailsInterface {
@@ -35,7 +37,9 @@ const DatePicker: React.SFC<Interface> = ({
   dateFormat,
   onDateChange,
   placeholderText,
-  selectedDefaultDate
+  selectedDefaultDate,
+  fromDate,
+  toDate
 }) => {
   const dateFormatted = dateFormat || '%D, %M %d, %y'
   const placeholder = placeholderText || 'Select Date'
@@ -151,7 +155,13 @@ const DatePicker: React.SFC<Interface> = ({
               <CalendarHeader {...{ bsMonth, bsYear, changeMonth }} />
               <CalendarWeek />
               <CalendarDates
-                {...{ calendarDetails, onDateClick, selectedDay }}
+                {...{
+                  calendarDetails,
+                  onDateClick,
+                  selectedDay,
+                  fromDate,
+                  toDate
+                }}
               />
             </div>
           </div>

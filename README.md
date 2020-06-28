@@ -22,7 +22,7 @@ import DatePicker from '@kaizer433/react-nepali-datepicker'
 import '@kaizer433/react-nepali-datepicker/dist/index.css'
 
 class Example extends Component {
-  defaultDate = '2077-02-12' //default date must be in YYYY-MM-DD format
+  defaultDate = '2077-04-12' //default date must be in YYYY-MM-DD format
   dateChange = (d) => {
     console.log(d)
     /** {"bsYear":2077,
@@ -41,6 +41,8 @@ class Example extends Component {
         onDateChange={(date) => dateChange(date)}
         placeholderText='From Date' //optional
         selectedDefaultDate={defaultDate} //optional
+        fromDate={'2077-03-11'} //optional;  if one need to set start date range; should be in YYYY-MM-DD format
+        toDate={'2077-03-29'} //optional; if one need to set end date range; should be in YYYY-MM-DD format
       />
     )
   }

@@ -10,6 +10,8 @@ const Picker = ({ setDateDetails, set }) => {
       dateFormat={'%y %M, %d'}
       onDateChange={(date) => set(date)}
       selectedDefaultDate={''}
+      // fromDate={'2077-03-11'}
+      // toDate={'2077-03-29'}
     />
   )
 }

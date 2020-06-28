@@ -120,3 +120,7 @@
 .zIndex {
   z-index: 999999999999 !important;
 }
+.disabled {
+  color: #cccccc;
+  pointer-events: none;
+}
