@@ -20,7 +20,7 @@ interface Interface {
   toDate: string | undefined
 }
 
-const CalendarWeek: React.SFC<Interface> = ({
+const CalendarWeek: React.FC<Interface> = ({
   calendarDetails,
   onDateClick,
   selectedDay,

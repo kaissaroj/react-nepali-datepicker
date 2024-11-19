@@ -4,7 +4,7 @@ import { calendarData } from '../helpers/calendardata'
 
 interface Interface {}
 
-const CalendarWeek: React.SFC<Interface> = ({}) => {
+const CalendarWeek: React.FC<Interface> = ({}) => {
   const { bsDays } = calendarData
   return (
     <div className={styles.dayofweek}>

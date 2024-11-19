@@ -9,7 +9,7 @@ interface Interface {
   changeMonth: Function
 }
 
-const CalendarHeader: React.SFC<Interface> = ({
+const CalendarHeader: React.FC<Interface> = ({
   bsMonth,
   bsYear,
   changeMonth

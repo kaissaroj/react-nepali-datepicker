@@ -33,7 +33,7 @@ interface CalendarDetailsInterface {
 
 let containerRef: any = []
 
-const DatePicker: React.SFC<Interface> = ({
+const DatePicker: React.FC<Interface> = ({
   dateFormat,
   onDateChange,
   placeholderText,
