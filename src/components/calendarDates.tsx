@@ -65,7 +65,12 @@ const CalendarWeek: React.SFC<Interface> = ({
               styles[selectedButtonClass]
             } ${styles[customClassName] ? styles[customClassName] : ''}`}
             key={`${day}-${index}`}
-            onClick={() => onDateClick(index + 1)}
+            onClick={(e) => {
+              e.preventDefault() // Prevent form submission
+              if (!isDisabled) {
+                onDateClick(index + 1)
+              }
+            }}
           >
             <time className={styles[customCurrentDay]}>{day}</time>
           </button>
