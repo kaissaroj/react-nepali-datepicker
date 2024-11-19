@@ -6,7 +6,7 @@ const App = () => {
   const [dateDetails, setDateDetails] = React.useState({})
   return (
     <div className='container'>
-      <form onSubmit={(e) => e.preventDefault()}>
+      <form>
         <h1>React Nepali DatePicker Example</h1>
         <Picker selectedDefaultDate='' set={setDateDetails} />
         <p>Date Format : '%y %M, %d'</p>
